@@ -29,7 +29,8 @@ def app(df):
     # Add checkbox to show the columns datatype
     with beta_col2:
         if st.checkbox("View columns datatype"):
-            st.table(df.dtypes)
+            dtypes_df = df.dtypes.apply(lambda x: x.name)
+            st.table(dtypes_df)
 
     # Add checkbox to show the columns data.
     with beta_col3:
